@@ -7,6 +7,12 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <parent>
+    <groupId>org.gbif</groupId>
+    <artifactId>motherpom</artifactId>
+    <version>59</version>
+  </parent>
+
   <scm>
     <connection>scm:git:git@github.com:gbif/hadoop-minicluster.git</connection>
     <url>https://github.com/gbif/hadoop-minicluster</url>
@@ -205,6 +211,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.1</version>
         <executions>
           <execution>
             <phase>package</phase>
