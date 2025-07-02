@@ -37,7 +37,7 @@ pipeline {
         configFileProvider([
             configFile(fileId: 'org.jenkinsci.plugins.configfiles.maven.GlobalMavenSettingsConfig1387378707709', variable: 'MAVEN_SETTINGS')
           ]) {
-          sh 'mvn -s ${MAVEN_SETTINGS} clean deploy -pl occurrence-hadoop-minicluster'
+          sh 'mvn -s ${MAVEN_SETTINGS} clean deploy'
         }
       }
     }
@@ -57,7 +57,7 @@ pipeline {
             configFile(fileId: 'org.jenkinsci.plugins.configfiles.maven.GlobalMavenSettingsConfig1387378707709', variable: 'MAVEN_SETTINGS_XML')
           ]) {
           git 'https://github.com/gbif/occurrence.git'
-          sh 'mvn -s $MAVEN_SETTINGS_XML -B -Denforcer.skip=true release:prepare release:perform $RELEASE_ARGS -pl occurrence-hadoop-minicluster'
+          sh 'mvn -s $MAVEN_SETTINGS_XML -B -Denforcer.skip=true release:prepare release:perform $RELEASE_ARGS'
         }
       }
     }
